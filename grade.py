@@ -1,9 +1,9 @@
-
-cgpa = 8.5
+cgpa = 7.6
 if cgpa > 9:
-    grade = "Yes"
-    print(grade)
+    print("S")
+elif cgpa > 8:
+    print("A")
+elif cgpa > 7:
+    print("B")
 else:
-    grade = "F"
-    print(grade)
-print(10000)   # always runs — outside the if/else block
+    print("C")
