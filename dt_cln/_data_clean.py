@@ -24,10 +24,8 @@ df.dropna(thresh = len(df) * (1- n/100),axis = 1, inplace =True)
 # Step 2: Normalise item and drop near-duplicates
 # TODO: lowercase + strip into item_clean, then drop_duplicates on item_clean
 
-df['item'] = df['item'].astype(str).str.strip().str.lower()
-
 df['item_clean'] = df['item'].astype(str).str.strip().str.lower()
-df['item_clean'] = df['item_clean'].drop_duplicates()
+df.drop_duplicates(subset='item_clean', keep='first', inplace=True)
 
 # Step 3: Convert price to numeric and fill NaN with -1
 # TODO: use pd.to_numeric with errors='coerce', then fillna(-1)
