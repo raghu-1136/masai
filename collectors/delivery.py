@@ -3,31 +3,28 @@ def process_roster(roster):
     # Step 1: convert tuples to lists, append "active", convert back to tuples
     # print(roster)
     tmplst = []
+    updated_roster = []
+    names = []
+    delivery = []
+
     for i in roster:
        tmplst.append( list(i))
-
     # print(tmplst)
     for i in tmplst:
         i.append("active")
     # print(tmplst)
-    updated_roster = []
-    for i in tmplst:
         updated_roster.append(tuple(i))
-    print(updated_roster)
     # Step 2: extract driver names into a new list
-    names = []
-    for i in tmplst:
         names.append(i[0])
-    print(names)
-    # Step 3: sort names in place
-    names.sort()
-    sorted_names = []
 
-    for i in names:
-        sorted_names.append(i)
+    print(names)
+    print(updated_roster)
+
+    # Step 3: sort names in place
+    #names.sort()
+    sorted_names = sorted(names)
     print(sorted_names)
     # Step 4: count high performers (deliveries > 50)
-    delivery = []
     for i in updated_roster:
         if i[1]> 50:
             delivery.append(i)
